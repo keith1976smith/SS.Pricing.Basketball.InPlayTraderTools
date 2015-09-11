@@ -1,0 +1,29 @@
+/*
+ * Mixin to apply fake zoom to an element by:
+ * 1. make bounding box wider and higher than normal
+ * 2. use scale transform to zoom it back down to the original dimensions
+ * 3. use translate transform to shift it back into the right positio
+ * It also works 
+ */
+.zoomify(@factor) {
+	@translateAmount: -50% * (1 - @factor);
+	@size: (1/@factor) * 100%;
+	height: @size !important;
+	width: @size !important;
+	// https://github.com/madebysource/lesshat/blob/master/README.md#--transform
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+	.lh-transform(
+		translate(@translateAmount, @translateAmount) 
+		scale(@factor, @factor)
+		//translate3d(0,0,0) // see below
+		);
+	// webkit likes to switch in and out of antialiasing modes while calculaing
+	// transforms. this locks it into one mode. an alternative is to include
+	// translate3d(0,0,0) in the transform, but that can produce artifacts
+	// http://css-tricks.com/forums/topic/transforms-cause-font-smoothing-weirdness-in-webkit/
+	//-webkit-font-smoothing: antialiased;
+}
+
+body {
+	//.zoomify(0.8);
+}

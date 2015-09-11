@@ -1,0 +1,8 @@
+{
+	"rootUrl": "/",
+    "baseUrl": "//connectappint.sportingsolutions.com/pricingapi",
+    "apiRootUrl": "//connectappint.sportingsolutions.com/IPAbasketballrestservice",
+    "forceHTTPS": false,
+    "forceXDomain": false,
+    "loginUrl": ""
+}

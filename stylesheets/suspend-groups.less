@@ -1,0 +1,32 @@
+.suspend-groups {
+    @dropdown-arrow-width: 2em;
+
+    display: block;
+    .btn-group {
+        display: block;
+    }
+    .snodgrass {
+        width: 100%;
+        padding-right: @dropdown-arrow-width;
+        .btn {
+            float: none;
+            .lh-border-bottom-right-radius(0);
+            .lh-border-top-right-radius(0);
+        }
+    }
+    .dropdown-toggle {
+        width: @dropdown-arrow-width;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+    .dropdown-menu {
+        right: 0;
+    }
+    .dropdown-menu > li > a {
+        line-height: inherit;
+    }
+}

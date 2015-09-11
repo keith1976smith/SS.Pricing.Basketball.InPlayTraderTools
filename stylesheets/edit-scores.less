@@ -1,0 +1,44 @@
+.edit-scores {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+
+  .edit-scores-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: @area-background;
+    max-width: 60em;
+    margin: 0 auto;
+  }
+
+  table {
+    table-layout: auto;
+    tr {
+      td, th {
+        padding: 0.5em;
+        &.team {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+  }
+  
+  tr > td:last-child {
+    text-align: right;
+    border-left-style: none;
+  }
+  tr > td:nth-last-child(2) {
+    border-right-style: none;
+  }
+}
+
+

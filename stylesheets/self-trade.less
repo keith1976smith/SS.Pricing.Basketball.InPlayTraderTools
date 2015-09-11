@@ -1,0 +1,212 @@
+.self-trade {
+    @padding-base: 1em;
+    @action-bar-height: 5rem;
+    @primary-area-height: 21.5rem;
+
+    width: 100%;
+    height: 100%;
+    background-color: @main-background;
+    padding: 2rem;
+    position: relative;
+
+
+
+    // fonts & colors
+    .self-trade-primary {
+        background-color: @area-background;
+        .self-trade-price-highlights-grid {
+            border-style: solid;
+            border-color: @input-border;
+            border-width: 1px 0 1px 1px;
+        }
+        .self-trade-clock-area {
+            border: 1px solid @input-border;
+            border-collapse: collapse;
+        }
+        .self-trade-action-bar {
+            background-color: @area-background-alt;
+        }
+    }
+    .self-trade-variables {
+        background-color: @area-background-subtle;
+    }
+
+    .self-trade-tabs {
+        position: absolute;
+        top: @padding-base;
+        left: @padding-base;
+        right: @padding-base;
+        height: @status-track-height;
+        min-width: 65rem;
+        @line-color: @btn-default-color;
+        ul {
+            border-color: @line-color;
+            li a {
+                color: @brand-primary;
+            }
+            li.active {
+                a {
+                    border-color: @line-color;
+                    color: @text-color;
+                    border-width: 2px;
+                    border-bottom-color: @main-background;
+                    background-color: @main-background;
+                }
+            }            
+        }
+    }
+
+
+    @status-track-height: 3rem;
+    @headline-grid-width: 19.5rem;
+    @scoreboard-width: 24rem;
+    @clock-width: 13.5rem;
+    @tabs-height: 1rem;
+
+    .self-trade-status-track {
+        position: absolute;
+        top: @padding-base * 1;
+        right: @padding-base;
+        height: @status-track-height;
+        widh: 33%;
+        min-width: 65rem;
+        z-index: 100;
+    }
+    .suspend-groups {
+        font-size: 0.8em;
+    }
+
+
+
+    .self-trade-not-status-track {
+        position: absolute;
+        top: @status-track-height + @padding-base + @tabs-height;
+        left: @padding-base;
+        right: @padding-base;
+        bottom: @padding-base;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-width: 65rem;
+    }
+
+    .self-trade-side-panel {
+        min-width: 20rem;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: @headline-grid-width + @scoreboard-width + @clock-width + @padding-base;
+        overflow: hidden;
+    }
+    .self-trade-not-side-panel {
+        position: relative;
+        width: @headline-grid-width + @scoreboard-width + @clock-width;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .self-trade-large {
+        // .self-trade-status-track {
+        //     position: absolute;
+        //     top: @padding-base * 1;
+        //     left: @padding-base;
+        //     right: @padding-base;
+        //     height: @status-track-height;
+        // }
+
+        // .self-trade-not-status-track {
+        //     position: absolute;
+        //     top: @status-track-height + (@padding-base*1);
+        //     left: @padding-base;
+        //     right: @padding-base;
+        //     bottom: @padding-base;
+        //     .lh-display(flex);
+        //     .lh-flex-direction(row);
+        // }
+        .self-trade-primary {
+            position: relative;
+            &>* {
+                vertical-align: top;
+                display: inline-block;
+                height: @primary-area-height;
+            }
+            .self-trade-price-highlights-grid {
+                width: @headline-grid-width;
+                position: relative;
+                overflow: auto;
+            }
+            .self-trade-clock-area {
+                width: @clock-width;
+                position: relative;
+            }
+            .self-trade-action-bar {
+                position: relative;
+                display: block;
+                height: @action-bar-height;
+            }
+            .scoreboard-area {
+                width: 24rem;
+                height: @primary-area-height;
+            }
+        }
+        .self-trade-variables {
+            position: absolute;
+            top: @primary-area-height + @action-bar-height + @padding-base;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: auto;
+        }
+    }
+
+
+
+    .self-trade-medium {
+
+
+        .self-trade-primary {
+            position: relative;
+            &>* {
+                vertical-align: top;
+                display: inline-block;
+                height: @primary-area-height;
+            }
+            .self-trade-price-highlights-grid {
+                width: 33.3%;
+                position: relative;
+                overflow: auto;
+            }
+            .self-trade-clock-area {
+                width: 33.3%;
+                position: relative;
+            }
+            .scoreboard-area {
+                width: 33.3%;
+                position: relative;
+            }
+        }
+        .self-trade-action-bar {
+            .make-row();
+            position: relative;
+            height: @action-bar-height;
+        }
+        .self-trade-variables {
+            .make-row();
+            //height: 20em;
+            .tab-stuffer {
+                .make-sm-column(12);
+            }
+            position: relative;
+            overflow: auto;
+        }
+    }
+
+
+
+
+
+}
+
+

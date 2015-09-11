@@ -1,0 +1,71 @@
+
+
+.tab-stuffer {
+    @padding: 0.9rem;
+    .tab-stuffer-content {
+        background-color: @area-background;
+        .lh-border-radius(3px);
+        border-color: @input-border;
+    }    
+
+
+    &.tab-stuffer-fill  {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        .nav-tabs {    
+            min-height: 100%;
+            padding: @padding 0 @padding @padding;
+        }
+        .tab-stuffer-tabs {
+            position: absolute;
+            width: 33%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            top: 0;
+            left: 0;
+        }
+        .tab-stuffer-content {
+            position: absolute;
+            width: 67%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            padding: @padding;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-style: solid solid solid none;
+            border-width: 1px;
+        }    
+    }
+
+    &.tab-stuffer-free  {
+        .nav-tabs {
+            //min-height: 100%;
+            padding: @padding 0 @padding @padding;
+        }
+        .tab-stuffer-tabs {
+            //position: absolute;
+            width: 33%;
+            //height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            top: 0;
+            left: 0;
+            float: left;
+        }
+        .tab-stuffer-content {
+            //position: absolute;
+            width: 67%;
+            //height: 100%;
+            top: 0;
+            right: 0;
+            padding: @padding;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-style: solid solid solid none;
+            border-width: 1px;
+        }    
+    }
+}

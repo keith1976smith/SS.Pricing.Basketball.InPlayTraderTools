@@ -1,0 +1,21 @@
+.awooga {
+    &::before {
+        @shadow-color: black;
+        @text-color: #eee;
+        background-repeat: repeat-x;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAqCAIAAADTWYe5AAAA70lEQVRIiaXUMQqDQBCF4ZeFIBEERZDUaSziETxSbpFz5QYpUthYpxMkgiFgl0YQl5lxdpz28fN1c7jf8ue7BnOn47e+PLgVgGu7Spiv55ewAnDjlHJbEg1Z3Avx55c7YS6LRsbbrmJ7DT5OKdtrcAB0r8TZXonTvR6nez1O9EE40Qfhfh+K+30ovuoN+Ko34Etvw5fehs+9GZ97Mw7A7cEBuD04ALcHT6JB+n+beFk0Ur+JZ3Ev9Zs4uP+lxKVeg7O9Emd7JU73epzu9TjRB+FEH4T7fSju96H4qjfgq96AL70NX3obPvdmfO7NOIA/GmS8YMC22oIAAAAASUVORK5CYII=);
+        content: "Coming Soon";
+        text-transform: uppercase;
+        text-shadow: 0px 0px 4px @shadow-color;
+        color: @text-color;
+        display: block;
+        height: 4rem;
+        font-weight: 500;
+        font-size: 3.5rem;
+        letter-spacing: 0.2rem;
+        line-height: 1;
+        text-align: center;
+        vertical-align: middle;
+        margin-bottom: 1rem;
+    }
+}

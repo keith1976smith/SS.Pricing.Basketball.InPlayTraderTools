@@ -1,0 +1,39 @@
+.notifier {
+	@fade-perc: 0%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	.lh-translateX(-50%);
+	width: 30em;
+	text-align: center;
+	z-index: 1050;
+	letter-spacing: 0.05em;
+	.story {
+		background-color: fadeout(@text-color, @fade-perc);
+		color: @main-background;
+		width: 100%;
+		border-style: none;
+		border-color: @area-background-alt;
+		border-width: 1px 1px 1px 1px;
+		text-transform: smaller;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-bottom: 1px;
+		font-size: 0.8em;
+		@border-radius: 0.3rem;
+		.lh-transition(opacity 3s ease-in);
+		&:last-child {
+			.lh-border-bottom-left-radius(@border-radius);
+			.lh-border-bottom-right-radius(@border-radius);
+		}
+
+		&.leaving {
+			opacity: 0;
+		}
+	}
+	.story-error {
+		color: #ffcc66;
+		background-color: fadeout(#880000, @fade-perc);
+		//border-color: red;
+	}
+}

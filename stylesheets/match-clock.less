@@ -1,0 +1,72 @@
+.match-clock {
+    @disabled-color: darken(@tertiary-headings-color, 20%);
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: @text-color;
+    font-weight: bold;
+    text-transform: uppercase;
+    .quarters {
+        padding: 0.5em;
+        &>* {
+            padding: 0 0.5em;
+        }
+        .disabled {
+            color: @disabled-color;
+        }
+    }
+
+
+    .clock-area-inner {
+        font-size: 1.2em;
+        font-weight: 300;
+        line-height: 1;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 0 0 0.1em;
+
+        & > * {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .clock-spinner {
+            //background-color: #eee;
+            color: @tertiary-headings-color;
+        }
+        .clock-separator {
+            //background-color: #ddd;
+            //color: @tertiary-headings-color;
+            font-size: 2em;
+            padding: 0 0.2em;
+        }
+        .clock-direction-indicator {
+            //background-color: #ddd;
+            color: @tertiary-headings-color;
+            font-size: 1.8em;
+            padding: 0 0 0 0.2em;
+        }
+        .clock-spinner-number {
+            font-size: 2.4em;
+            background-color: @area-background-inverse;
+            color: @inverse-color;
+            padding: 0.3em 0.2em;
+        }
+        .clock-spinner-arrow {
+            font-size: 1.2em;
+            padding: 0.4em 0;
+            .lh-user-select(none);
+            margin-bottom: 0.2em;
+            &.disabled {
+                color: @disabled-color;
+            }
+        }
+    }
+
+
+
+    .clock-controls {
+        padding: 1rem 1rem 0 1rem;
+
+    }
+}

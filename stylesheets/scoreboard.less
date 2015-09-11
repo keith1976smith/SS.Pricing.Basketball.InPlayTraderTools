@@ -1,0 +1,199 @@
+.scoreboard {
+    
+
+    .-(@tone); 
+    .-(dark)  { @shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+    .-(light) { @shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+
+
+    //.-(@tone);
+
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        .lh-translate(-50%, 0%);
+
+        width: 100%;
+        height: 100%;
+        background: url("afl-pitch-@{tone}.svg");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 100%;
+        opacity: 1.0;
+        box-sizing: content-box;
+    }
+
+    background-color: @area-background-primary;
+    position: relative;
+    padding: 1rem 1rem;
+    border: 1px solid @input-border;
+    width: 100%;
+    height: 100%;
+
+    .scoreboard-home-team {
+        &, &>* {
+            float: left;
+            text-align: left;
+        }
+    }
+    .scoreboard-away-team {
+        &, &>* {
+            float: right;
+            text-align: right;
+        }
+    }
+
+    .scoreboard-row {
+        clear: both;
+        text-align: center;
+        .small-heading;
+        position: relative;
+
+        text-shadow: @shadow;
+
+        & > * {
+            vertical-align: middle;
+        }
+        &> label {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            .lh-translateX(-50%);
+        }
+        &.goals-row, &.behinds-row, &.shot-on-goal-row {
+            margin-top: 1.4rem;
+            font-size: 0.8em;
+            >label {
+                font-size: 1.2em;
+                color: @text-color;
+            }
+        }
+        &.quarter-goals-row, &.quarter-behinds-row {
+            margin-top: 0.5rem;
+        }
+        &.quarter-goals-row, &.quarter-behinds-row {
+            font-size: 0.8em;
+        }
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+    }
+
+
+    .score {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        font-weight: 300;
+        color: @headings-color;
+
+    }
+
+    .scoreboard-goal-total {
+        .subscore;
+    }
+
+    .scoreboard-behind-total {
+        .subscore;
+    }
+
+    .subscore {
+        font-size: 2rem;
+        font-weight: 300;
+        color: @headings-color;
+        line-height: 2rem;
+        padding: 0 1rem;
+    }
+
+    .btn-score {
+        width: 5rem;
+        text-align: center;
+        font-size: 1em;
+        line-height: 2em;
+        text-shadow: @shadow;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+    }
+
+    .quarter-track.slashy {
+        .quarter-score {
+            display: inline-block;
+            color: @secondary-headings-color;
+            font-weight: 300;
+            font-size: 1.3em;
+            line-height: 1em;
+            h3 {
+                display: none;
+                font-size: 0.6em;
+                line-height: 1.1em;
+            }
+            &:not(:last-child)::after {
+                content: "/";
+                margin: 0 0.3em;
+                color: @text-muted;
+            }
+        }
+    }
+
+    .quarter-track.blocky {
+        background-color: @input-background;
+        padding: 0 0.5em;
+        .lh-border-radius(3px);
+        .quarter-score {
+            display: inline-block;
+            color: @secondary-headings-color;
+            font-weight: 300;
+            font-size: 1.3em;
+            line-height: 1em;
+            h3 {
+                display: none;
+                font-size: 0.6em;
+                line-height: 1.1em;
+            }
+            &:not(:last-child)::after {
+                content: "/";
+                margin: 0 0.3em;
+                color: @text-muted;
+            }
+        }
+    }
+
+    .quarter-track.spacey {
+        .quarter-score {
+            display: inline-block;
+            width: 2em;
+            color: @secondary-headings-color;
+            font-weight: 300;
+            font-size: 1.2em;
+            line-height: 1em;
+            h3 {
+                font-size: 0.6em;
+                line-height: 1.1em;
+            }
+        }
+    }
+
+    .shot-on-goal {
+        h4 {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .slider {
+            margin: 1em 0;
+        }
+    }
+
+    .btn {
+            font-size: 1em;
+            line-height: 2em;        
+    }
+
+}
+
